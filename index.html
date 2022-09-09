@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stai</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <link rel="stylesheet" href="https://mathcool.games/coolmath/assets/css/main.css" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        function Navigate(link) {
+            $("#subPage").load(link, function () {
+                AnimateImage();
+            });
+        }
+        function AnimateImage() {
+            $("#imgAnimation").hover(function () {
+                $(this).attr("src", function (index, attr) {
+                    return attr.replace(".png", ".gif");
+                });
+            }, function () {
+                $(this).attr("src", function (index, attr) {
+                    return attr.replace(".gif", ".png");
+                });
+            });
+        }
+        $(document).ready(function () {
+            $("#subPage").load('./Addition/Index.html', function () {
+                AnimateImage();
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="subPage"></div>
+
+</body>
+
+</html>
